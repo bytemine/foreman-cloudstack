@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    foreman_cloudstack2 (0.1.1)
+    foreman_cloudstack2 (0.1.3)
       fog
 
 GEM

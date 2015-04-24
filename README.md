@@ -16,13 +16,13 @@ The gem name is "foreman_cloudstack2".
 
 | Foreman Version | Plugin Version |
 | ---------------:| --------------:|
-| >=  1.7         | 0.1.0          |
+| >=  1.7         | 0.1.3          |
 
 ## Latest code
 
 You can get the develop branch of the plugin by specifying your Gemfile in this way:
 
-    gem 'foreman_cloudstack', :git => "https://github.com/bytemine/foreman-cloudstack.git"
+    gem 'foreman_cloudstack2', :git => "https://github.com/bytemine/foreman-cloudstack.git"
 
 ## Limitations
 
