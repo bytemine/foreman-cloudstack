@@ -1,6 +1,6 @@
 require 'uri'
 
-module Foreman::Model
+module ForemanCloudstack
     class Cloudstack < ComputeResource
         has_one :key_pair, :foreign_key => :compute_resource_id, :dependent => :destroy
         after_create :setup_key_pair
