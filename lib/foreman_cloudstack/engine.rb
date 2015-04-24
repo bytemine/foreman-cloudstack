@@ -10,7 +10,7 @@ module ForemanCloudstack
 	class Engine < ::Rails::Engine
         engine_name 'foreman_cloudstack'
 
-        config.autoload_paths += Dir["../../../app/models/concerns"]
+        config.autoload_paths += Dir["#{config.root}/app/models/concerns"]
 
 		initializer 'foreman_cloudstack.register_gettext', :after => :load_config_initializers do |app|
 			locale_dir    = File.join(File.expand_path('../../..', __FILE__), 'locale')
