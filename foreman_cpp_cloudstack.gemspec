@@ -1,13 +1,13 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
-require "foreman_cloudstack2/version"
+require "foreman_cpp_cloudstack/version"
 require "date"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-	s.name        = "foreman_cloudstack2"
-	s.version     = ForemanCloudstack2::VERSION
+	s.name        = "foreman_cpp_cloudstack"
+	s.version     = ForemanCPPCloudstack::VERSION
 	s.date        = Date.today.to_s
 	s.authors     = ["bytemine GmbH, Daniel Rauer"]
 	s.email       = ["info@bytemine.net"]

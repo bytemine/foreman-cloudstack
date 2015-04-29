@@ -10,19 +10,19 @@ Please see the Foreman manual for appropriate instructions:
 
 * [Foreman: How to Install a Plugin](http://theforeman.org/manuals/latest/index.html#6.1InstallaPlugin)
 
-The gem name is "foreman_cloudstack2".
+The gem name is "foreman_cpp_cloudstack".
 
 ## Compatibility
 
 | Foreman Version | Plugin Version |
 | ---------------:| --------------:|
-| >=  1.7         | 0.1.3          |
+| >=  1.7         | 0.1.4          |
 
 ## Latest code
 
 You can get the develop branch of the plugin by specifying your Gemfile in this way:
 
-    gem 'foreman_cloudstack2', :git => "https://github.com/bytemine/foreman-cloudstack.git"
+    gem 'foreman_cpp_cloudstack', :git => "https://github.com/bytemine/foreman-cloudstack.git"
 
 ## Limitations
 

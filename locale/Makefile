@@ -3,4 +3,4 @@
 # Locale/README in the Foreman Core.
 #
 include ../.foreman_app/locale/Makefile
-DOMAIN = foreman_cloudstack2
+DOMAIN = foreman_cpp_cloudstack

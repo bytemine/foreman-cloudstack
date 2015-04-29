@@ -4,25 +4,25 @@ require 'fog'
 require 'fog/cloudstack'
 require 'fog/cloudstack/models/compute/server'
 
-module ForemanCloudstack2
+module ForemanCPPCloudstack
 	#Inherit from the Rails module of the parent app (Foreman), not the plugin.
 	#Thus, inherits from ::Rails::Engine and not from Rails::Engine
 	class Engine < ::Rails::Engine
-        engine_name 'foreman_cloudstack2'
+        engine_name 'foreman_cpp_cloudstack'
 
         config.autoload_paths += Dir["#{config.root}/app/models/concerns"]
 
-		initializer 'foreman_cloudstack2.register_gettext', :after => :load_config_initializers do |app|
+		initializer 'foreman_cpp_cloudstack.register_gettext', :after => :load_config_initializers do |app|
 			locale_dir    = File.join(File.expand_path('../../..', __FILE__), 'locale')
-			locale_domain = 'foreman_cloudstack2'
+			locale_domain = 'foreman_cpp_cloudstack'
 
 			Foreman::Gettext::Support.add_text_domain locale_domain, locale_dir
 		end
 
-		initializer 'foreman_cloudstack2.register_plugin', :after => :finisher_hook do |app|
-			Foreman::Plugin.register :foreman_cloudstack2 do
+		initializer 'foreman_cpp_cloudstack.register_plugin', :after => :finisher_hook do |app|
+			Foreman::Plugin.register :foreman_cpp_cloudstack do
 				requires_foreman '>= 1.7'
-				compute_resource ForemanCloudstack2::Cloudstack
+				compute_resource ForemanCPPCloudstack::Cloudstack
 			end
 
 		end
@@ -31,7 +31,7 @@ module ForemanCloudstack2
             begin
             Fog::Compute::Cloudstack::Server.send(:include, ::FogExtensions::Cloudstack::Server)
             rescue => e
-                puts "#{ForemanCloudstack2}: skipping engine hook (#{e.to_s})"
+                puts "#{ForemanCPPCloudstack}: skipping engine hook (#{e.to_s})"
             end
         end
 
