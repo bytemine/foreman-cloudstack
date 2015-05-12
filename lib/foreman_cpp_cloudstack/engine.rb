@@ -37,8 +37,8 @@ module ForemanCPPCloudstack
 		
 		config.to_prepare do
             begin
-              Fog::Compute::Cloudstack::Server.send(:include, ::FogExtensions::Cloudstack::Server)
-              Host::Managed.send(:include, ForemanCPPCloudstack::Compute)
+                Fog::Compute::Cloudstack::Server.send(:include, ::FogExtensions::Cloudstack::Server)
+                Host::Managed.send(:include, ForemanCPPCloudstack::Compute)
             rescue => e
                 puts "#{ForemanCPPCloudstack}: skipping engine hook (#{e.to_s})"
             end
