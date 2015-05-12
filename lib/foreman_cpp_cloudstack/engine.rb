@@ -32,7 +32,6 @@ module ForemanCPPCloudstack
 				requires_foreman '>= 1.7'
 				compute_resource ForemanCPPCloudstack::Cloudstack
 			end
-
 		end
 		
 		config.to_prepare do
@@ -43,6 +42,5 @@ module ForemanCPPCloudstack
                 puts "#{ForemanCPPCloudstack}: skipping engine hook (#{e.to_s})"
             end
         end
-
 	end
 end
