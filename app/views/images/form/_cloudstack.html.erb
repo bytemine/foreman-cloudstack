@@ -1,3 +1,12 @@
 <%= text_f f, :username, :value => @image.username || "root", :help_inline => _("The user that is used to ssh into the instance, normally cloud-user, ec2-user, ubuntu, root etc") %>
-<%= image_field(f) %>
+<%= selectable_f(f, :uuid,  @compute_resource.templates_isos.map {|t| [t[:name], t[:id]]},
+                    {}, {:label => _('Template/ISO'), :onLoad => "disable_select()"}) %>
 <%= checkbox_f f, :user_data, :help_inline => _("Does this image support user data input (e.g. via cloud-init)?") %>
+
+<script type="text/javascript">
+  $('#image_uuid').find("option").each(function() {
+    if($(this).val()=="-1") {
+      $(this).attr('disabled', 'true');
+    }
+  });
+</script>

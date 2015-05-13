@@ -29,6 +29,25 @@ module ForemanCPPCloudstack
             end
         end
 
+        def templates_isos
+            list = Array.new
+            templates = client.list_templates("self")["listtemplatesresponse"]["template"]
+            if templates.any?
+                list << {:id => "-1", :name => "--- Templates ---"}
+                templates.each do |template|
+                    list << {:id => template["id"], :name => template["name"]+" ("+template["zonename"]+")"}
+                end
+            end
+            isos = client.list_isos["listisosresponse"]["iso"]
+            if isos.any?
+                list << {:id => "-1", :name => "--- ISOs ---"}
+                isos.each do |iso|
+                    list << {:id => iso["id"], :name => iso["name"]+" ("+iso["zonename"]+")"}
+                end
+            end
+            list
+        end
+
         def domains
             return [] if url.blank? or user.blank? or password.blank?
             domainsobj = client.list_domains
