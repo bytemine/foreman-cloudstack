@@ -14,7 +14,7 @@ The gem name is "foreman_cpp_cloudstack".
 
 | Foreman Version | Plugin Version |
 | ---------------:| --------------:|
-| =  1.7          | 0.1.5          |
+| =  1.7          | 0.1.6          |
 
 ## Latest code
 
