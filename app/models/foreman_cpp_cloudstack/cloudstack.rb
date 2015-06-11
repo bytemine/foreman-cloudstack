@@ -119,7 +119,7 @@ module ForemanCPPCloudstack
         end
 
         def provided_attributes
-            super.merge({ :ip => :test_method })
+            super.merge({ :ip => :ip_address, :mac => :mac_address })
         end
 
         def self.model_name

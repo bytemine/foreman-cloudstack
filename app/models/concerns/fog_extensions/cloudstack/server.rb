@@ -20,21 +20,21 @@ module FogExtensions
 				name
 			end
 
-                        def ip_address
-				logger.info "BG inspect nics:"
-				logger.info nics.inspect
-                                return nics[0]["ipaddress"]
-                        end
+            def ip_address
+                nics[0]["ipaddress"]
+            end
 
-			def test_method
-                                nics[0]["ipaddress"]
-			end
+            def ip_addresses
+                nics.map { |n| n.ipaddress }
+            end
 
-                        def ip_addresses
-				logger.info "BG inspect nics:"
-				logger.info nics.inspect 
-                                nics.map { |n| n.ipaddress } 
-                        end
+            def mac_address
+                nics[0]["macaddress"]
+            end
+
+            def mac_addresses
+                nics.map { |n| n.macaddress }
+            end
 
 			def start
 				if state.downcase == 'paused'
